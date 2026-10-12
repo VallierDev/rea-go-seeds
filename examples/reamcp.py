@@ -3,7 +3,7 @@
 
 Usage: reamcp.py <plan.jsonl>
 Each plan line: {"label": "name", "tool": "open_binary", "args": {...}}
-Results land in /tmp/agyre/mcp/<seq>-<label>.json ; progress to stderr.
+Results land in ./mcp/<seq>-<label>.json ; progress to stderr.
 """
 import json, os, subprocess, sys, threading, time
 

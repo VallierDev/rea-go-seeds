@@ -16,4 +16,4 @@
 {"label": "decomp-memoizeKeyringTimeout", "tool": "procedure_pseudo_code", "args": {"procedure": "0x101895d20"}}
 {"label": "decomp-GetManifestURLFromBase", "tool": "procedure_pseudo_code", "args": {"procedure": "0x1028a3200"}}
 {"label": "decomp-RunLogin", "tool": "procedure_pseudo_code", "args": {"procedure": "0x10239acc0"}}
-{"label": "close", "tool": "close_binary", "args": {"snapshot_path": "/tmp/agyre/ghidra-snapshot.json", "overwrite": true}}
+{"label": "close", "tool": "close_binary", "args": {"snapshot_path": "./ghidra-snapshot.json", "overwrite": true}}
