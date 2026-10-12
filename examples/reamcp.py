@@ -8,16 +8,15 @@ Results land in /tmp/agyre/mcp/<seq>-<label>.json ; progress to stderr.
 import json, os, subprocess, sys, threading, time
 
 PLAN = sys.argv[1]
-OUTDIR = "/tmp/agyre/mcp"
+OUTDIR = os.path.abspath("./mcp")
 os.makedirs(OUTDIR, exist_ok=True)
 
 env = dict(os.environ)
-env.update({
-    "GHIDRA_INSTALL_DIR": os.path.expanduser("~/tools/ghidra_12.1.4_PUBLIC"),
-    "JAVA_HOME": "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home",
-    "REA_GHIDRA_STARTUP_TIMEOUT_MS": "21600000",
-    "REA_GHIDRA_SEED_FILE": "/tmp/agyre/seeds.txt",
-})
+env.setdefault("REA_GHIDRA_SEED_FILE", os.path.abspath("./out/seeds.txt"))
+env.setdefault("REA_GHIDRA_STARTUP_TIMEOUT_MS", "21600000")
+# GHIDRA_INSTALL_DIR and JAVA_HOME must point at your Ghidra + JDK 21:
+# export GHIDRA_INSTALL_DIR=~/tools/ghidra_12.1.4_PUBLIC
+# export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 
 proc = subprocess.Popen(["rea", "--mcp"], stdin=subprocess.PIPE,
                         stdout=subprocess.PIPE, stderr=open(f"{OUTDIR}/server.err", "wb"),

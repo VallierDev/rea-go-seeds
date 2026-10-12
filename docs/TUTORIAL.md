@@ -79,7 +79,7 @@ for _, fn := range t.Funcs { fmt.Printf("%x %s\n", fn.Entry, fn.Name) }
 REA 的 Ghidra provider 支持 `REA_GHIDRA_SEED_FILE`——一个 `地址<TAB>function<TAB>名字` 的文本文件，导入时由预分析脚本批量创建并命名函数（上限 100 万条 / 32MB)。用本仓库工具一条命令生成（154,155 条，18MB):
 
 ```bash
-go run . /Users/xiaojian/.local/bin/agy ./out
+go run . ~/.local/bin/agy ./out
 # out/seeds.txt 即 REA 种子文件:
 # 0x1000011c0	function	internal/abi.(*RegArgs).Dump
 # 0x1000013b0	function	internal/abi.(*RegArgs).IntRegArgAddr
@@ -148,7 +148,7 @@ REA 的 CLI 每次调用都是一个新进程（Ghidra 分析要重跑），所�
 REA 还能用 PTY 抓进程行为（终端帧、退出码、文件系统前后快照、定时输入事件）:
 
 ```json
-{"executable": "/Users/xiaojian/.local/bin/agy", "arguments": ["--version"],
+{"executable": "~/.local/bin/agy", "arguments": ["--version"],
  "terminal": {"columns": 100, "rows": 30}, "timeout_ms": 15000}
 ```
 

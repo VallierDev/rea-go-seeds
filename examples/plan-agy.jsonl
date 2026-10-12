@@ -1,4 +1,4 @@
-{"label": "open", "tool": "open_binary", "args": {"path": "/Users/xiaojian/.local/bin/agy", "provider_id": "ghidra"}}
+{"label": "open", "tool": "open_binary", "args": {"path": "/Users/you/.local/bin/agy", "provider_id": "ghidra"}}
 {"label": "overview", "tool": "binary_overview", "args": {}}
 {"label": "probe-eligibility", "tool": "search_procedures", "args": {"pattern": "waitForEligibility"}}
 {"label": "search-ineligibleTiers", "tool": "search_strings", "args": {"pattern": "ineligibleTiers"}}
